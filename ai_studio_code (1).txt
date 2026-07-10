@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import { Inter, Montserrat } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["800", "900"], variable: "--font-montserrat" });
+
+export const metadata: Metadata = {
+  title: "Growth Target | O Clique Certo não Converte",
+  description: "Agência de tráfego pago focada em performance e escala real.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="pt-br" className="scroll-smooth">
+      <body className={`${inter.variable} ${montserrat.variable} bg-brand-darker text-white antialiased`}>
+        {children}
+      </body>
+    </html>
+  );
+}
